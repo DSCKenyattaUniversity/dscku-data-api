@@ -1,0 +1,29 @@
+{
+  "name": "dscku-data-api",
+  "version": "1.0.0",
+  "description": "memebers data api",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "firebase"
+  ],
+  "author": "domani samuel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^7.2.3",
+    "nodemon": "^1.19.4",
+    "router": "^1.3.3"
+  },
+  "private": true,
+  "engines": {
+    "npm": "^5.7.1",
+    "node": "^9.5.0"
+  }
+}
