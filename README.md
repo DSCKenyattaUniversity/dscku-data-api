@@ -52,4 +52,4 @@ Setting up the app locally.
 - install the dependencies.
 `npm install`
 - Run app locally by starting the server
-`nodemon server.js`
+`nodemon app.js`
