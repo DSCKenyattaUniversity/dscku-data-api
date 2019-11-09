@@ -5,7 +5,7 @@ let router = require('express').Router()
 var membersController = require('../controller/members')
 
 // create members routes
-router.route('/members')
+router.route('/x1y2z3')
     .get(membersController.getMembers)
 
 // export API routes
