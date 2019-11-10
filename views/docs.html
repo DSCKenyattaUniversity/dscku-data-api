@@ -17,7 +17,9 @@
         <link rel="stylesheet" href="../static/styles.css"> 
         <!--google fonts-->
         <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+        <!-- code prettify -->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -26,64 +28,93 @@
         
         <nav>
             <div class="nav-brand">
-                <img src="../static/images/logo.png" alt="logo"><span>DSC Kenyatta University API Docs</span>
+                <img src="../static/images/logo.png" alt="logo"><span>DSC Kenyatta University API</span>
             </div>
+            <a href="https://dsc-ku.web.app"><button>Go to DSCKU</button></a>
         </nav>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="col-md-12" id="intro">
-                    <div class="text-wrapper">
-                        <h1>Introduction</h1>
-                        <p>The DSCKU <a href="https://en.wikipedia.org/wiki/Application_programming_interface">APIs</a> are organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>.<br>
-                        Behind these APIs is a software layer connecting and optimizing data flow</p>
-                        <p> Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, 
-                            returns JSON-encoded responses, 
-                            and uses standard HTTP response codes, authentication, and verbs.</p>
-                    </div>    
-                </div>
-                <div class="col-md-12" id="guide">
-                    <div class="text-wrapper">
-                        <h1>User Guide</h1>
-                        <h3>Working with Members API</h3> <br><br>
-                        <div class="code">
-                            <div class="code-top"><b>BASE URL:</b></div>
-                            <div class="code-body"><code>https://dscku-data.herokuapp.com</code></div>
-                        </div>
-                        <h4></h4><b>members endpoints</b></h4>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th>Endpoint</th>
-                                    <th>Functionality</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>GET</td>
-                                    <td>BASE URL<code>/api/public/members</code></td>
-                                    <td>Get all members</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>      
-                </div>
-                <div class="col-md-12" id="terms">
-                    <div class="text-wrapper">
-                        <h1>Terms & Conditions</h1>
-                        <p>coming soon...</p>
-                    </div>      
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="text-wrapper" style="min-height: 100vh; position:fixed; background:black; position: absolute; text-align: center; color: #ffffff;">
-                    <img src="../static/images/illustration.png" alt="DSCKU" class="illustration">
-                    <div class="credits">
-                        <img src="../static/images/logo.png" alt="dscku" height="50px;"><br><br><b>DEVELOPER STUDENT CLUB KENYATTA UNIVERSITY</b>
-                    </div>
-                </div>     
-             </div>
+        <div class="banner">
+            <div class="overlay"><h1>Make it Happen</h1></div>
         </div>
+        <div class="content">
+            <div class="card">
+                <p class="header">Introduction</p>
+                <p>The DSCKU <a href="https://en.wikipedia.org/wiki/Application_programming_interface">APIs</a> are organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>.<br>
+                Behind these APIs is a software layer connecting and optimizing data flow</p>
+                <p> Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, 
+                    returns JSON-encoded responses, 
+                    and uses standard HTTP response codes, authentication, and verbs.</p>
+            </div>
+            <div class="card">
+                <p class="header">User Guide</p>
+                <h3>Working with Members API</h3> <br>
+                
+                <div class="code">
+                    <div class="code-top"><b>BASE URL:</b></div>
+                    <div class="code-body"><code>https://dscku-data.herokuapp.com</code></div>
+                </div>
+                <br><br>
+    
+                <h4></h4><b>members endpoints</b></h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Endpoint</th>
+                            <th>Functionality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>BASE URL<code>/api/public/members</code></td>
+                            <td>Get all members</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="code">
+                    <div class="code-top"><b>original (private) schema: 🔒</b></div>
+                    <div class="code-body">
+                        <pre class="prettyprint json">
+    {
+        "username": "Chris Brown",
+        "phone": "0700XXXXXX",
+        "email": "chrisweezy@atlanticrecords.us",
+        "course": "Computer Science",
+        "year": "3",
+        "interests": [
+            "WEB",
+            "MACHINE_LEARNING"
+        ]
+    }
+                        </pre>
+                    </div>
+                </div>
+                <p style="margin: 10px; color:red; font-size:30px; font-weight:bolder;">NOTICE ⚠️</p>
+                <li>Due to privacy concern, each member is assigned a unique <code>membership_id</code> to replace confidential details: <code>username, phone</code> and <code>email</code></li>
+                <li>For every http request, the <code>membership_id</code> changes to a <b>new, unique</b> one. </li>
+                <br><br>
+                <div class="code">
+                        <div class="code-top"><b>public available schema: 🆓</b></div>
+                        <div class="code-body">
+                            <pre class="prettyprint json">
+    {
+        "membership_id": "memb75876",
+        "course": "Computer Science",
+        "year": "3",
+        "interests": [
+                "WEB",
+                "MACHINE_LEARNING"
+            ]
+    }
+                            </pre>
+                        </div>
+                    </div>
+            </div>
+            <div class="card">
+                <p class="header">Terms & Conditions</p>
+                <p>coming soon...</p>
+            </div>
+        </div> 
 
         
         <script src="" async defer></script>
